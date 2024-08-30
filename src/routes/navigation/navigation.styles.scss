@@ -1,0 +1,116 @@
+// General Styles
+.navbar-container {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+.navbar-element {
+    color: black;
+    width: 30%;
+    display: flex;
+}
+.navbar-element.logo-container {
+    justify-content: center;
+}
+.navbar-element.icons-container {
+    justify-content: flex-end;
+}
+
+// Left Block
+.burguer-menu {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.burguer-menu:hover {
+    transform: rotate(180deg);
+}
+.burguer-menu.open {
+    transform: rotate(90deg);
+    border: 1px solid black;
+    background-color: transparent;
+}
+.slider-menu {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0px;
+    width: 400px;
+    height: 100vh;
+    background-color: rgba(250, 250, 250);
+    backdrop-filter: blur(7px);
+    transform: translate(-90%, 0);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.slider-menu.open {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+.slider-menu .close-slider-menu {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.slider-menu.open .close-slider-menu {
+    opacity: 1;
+}
+.slider-menu-overlay {
+    display: none;
+    opacity: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background-color: rgba(250,250,250, 0.1);
+    backdrop-filter: blur(2px);
+    top: 0px;
+    left: 0;
+    transition: opacity 0.3s ease;
+}
+.slider-menu-overlay.open {
+    display: block;
+    opacity: 1;
+}
+.slider-menu-content {
+    padding: 85px 20px 30px 50px;
+    display: flex;
+    flex-direction: column;
+}
+.slider-menu-content a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    margin: 5px 0;
+}
+.slider-menu-content a:hover {
+    font-weight: 600;
+}
+
+
+// Center Block
+.navbar-logo {
+    height: 40px;
+}
+
+
+// Right Block
+.icons-container {
+    display: flex;
+}
+.icon-element {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+}
+.icon-element a {
+    color: black;
+}
