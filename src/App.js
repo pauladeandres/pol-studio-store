@@ -3,7 +3,7 @@ import Home from "./routes/home/home.component";
 import About from "./routes/about/about.component";
 import NavBar from "./routes/navigation/navigation.components";
 import Cart from "./routes/cart/cart.component";
-import Login from "./routes/login/login.component";
+import AccountForm from "./routes/account/account-form.component";
 
 const Shop = () => {
   return <h1>I am the SHOP</h1>
@@ -16,7 +16,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path='shop' element={<Shop />} />
         <Route path='about' element={<About />} />
-        <Route path='login' element={<Login />} />
+        <Route path='login' element={<AccountForm />} />
         <Route path='cart' element={<Cart />} />
       </Route>
     </Routes>
