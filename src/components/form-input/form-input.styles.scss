@@ -1,4 +1,33 @@
+@mixin smallLabel {
+    top: 5px;
+    font-size: 10px;
+}
+
 .input-container {
     display: flex;
     flex-direction: column;
+    position: relative;
+    padding-top: 12px;
+
+    input {
+        &:focus {
+            outline: none;
+        }
+        &:focus~label {
+            @include smallLabel;
+        }
+    }
+
+    label {
+        font-size: 14px;
+        position: absolute;
+        top: 18px;
+        left: 0;
+        transition: all 0.3s ease;
+    }
+}
+
+.input-container.shrink label {
+    top: 2px;
+    font-size: 10px;
 }
