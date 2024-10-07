@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
+
+import './signup-form.styles.scss'
 
 const defaultFormFields = {
     displayName: '',
@@ -84,6 +87,7 @@ const SignupForm = () => {
                 </FormInput>
                 <Button type="submit" text="Sign Up"></Button>
             </form>
+            <div className="form-extrainfo">Already have an account? <Link to="/login">Log in here</Link></div>
         </div>
     )
 }

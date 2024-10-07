@@ -4,7 +4,8 @@ import {
     signInWithPopup,
     signInWithRedirect,
     GoogleAuthProvider,
-    createUserWithEmailAndPassword
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword
 } from 'firebase/auth'
 import { confirmPasswordReset } from 'firebase/auth/cordova';
 
@@ -71,6 +72,12 @@ export const createUserDocumentFromAuth = async (
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
     if(!email || !password) return;
-    console.log('Enviando en utils', email, password)
+
     return await createUserWithEmailAndPassword(auth, email, password);
+}
+
+export const signinAuthUserWithEmailAndPassword = async (email, password) => {
+    if (!email || !password) return;
+
+    return await signInWithEmailAndPassword(auth, email, password);
 }

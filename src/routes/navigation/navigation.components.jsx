@@ -1,5 +1,7 @@
-import { Fragment } from 'react'
+import { Fragment, useContext } from 'react'
 import { Outlet, Link } from 'react-router-dom'
+
+import { UserContext } from '../../contexts/user.context'
 
 import './navigation.styles.scss'
 import { ReactComponent as  CartIcon } from '../../assets/icons/bag.svg'
@@ -9,6 +11,8 @@ import { ReactComponent as UserIcon } from '../../assets/icons/user-circle.svg'
 
 
 const NavBar = () => {
+    const { currentUser } = useContext(UserContext);
+    console.log(currentUser)
 
     function openSliderMenu() {
         document.querySelector('.slider-menu').classList.toggle('open');
