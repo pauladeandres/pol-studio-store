@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
+
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
 
 import './signup-form.styles.scss'
@@ -32,7 +34,7 @@ const SignupForm = () => {
         // See if we have authenticatet that user
         try {
             const { user } = await createAuthUserWithEmailAndPassword(email, password);
-            console.log(user)
+            console.log(user);
             await createUserDocumentFromAuth(user, { displayName });
             resetFormFields()
         } catch (error) {

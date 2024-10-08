@@ -3,8 +3,10 @@ import { Outlet, Link } from 'react-router-dom'
 
 import { UserContext } from '../../contexts/user.context'
 
+import { signOutUser } from '../../utils/firebase/firebase.utils'
+
 import './navigation.styles.scss'
-import { ReactComponent as  CartIcon } from '../../assets/icons/bag.svg'
+import { ReactComponent as CartIcon } from '../../assets/icons/bag.svg'
 import { ReactComponent as Logo } from '../../assets/pol.svg'
 import { ReactComponent as CloseIcon } from '../../assets/icons/close.svg'
 import { ReactComponent as UserIcon } from '../../assets/icons/user-circle.svg'
@@ -12,7 +14,6 @@ import { ReactComponent as UserIcon } from '../../assets/icons/user-circle.svg'
 
 const NavBar = () => {
     const { currentUser } = useContext(UserContext);
-    console.log(currentUser)
 
     function openSliderMenu() {
         document.querySelector('.slider-menu').classList.toggle('open');
@@ -29,8 +30,8 @@ const NavBar = () => {
         <Fragment>
             <div className='navbar-container'>
                 <div className='navbar-element burguer-menu-container'>
-                    <div className='burguer-menu' onClick={ openSliderMenu }>
-                        <CloseIcon className='close-slider-menu'/>
+                    <div className='burguer-menu' onClick={openSliderMenu}>
+                        <CloseIcon className='close-slider-menu' />
                     </div>
                 </div>
                 <Link className='navbar-element logo-container' to='/'>
@@ -42,6 +43,15 @@ const NavBar = () => {
                             <UserIcon className='user-icon' />
                         </Link>
                     </div>
+                    {
+                        currentUser ? (
+                            <div className='icon-element'>
+                                <span className='icon-link' onClick={signOutUser}>
+                                    SIGN OUT
+                                </span>
+                            </div>
+                        ) : null
+                    }
                     <div className='icon-element'>
                         <Link className='icon-link' to='/cart' >
                             <CartIcon className='cart-icon' />

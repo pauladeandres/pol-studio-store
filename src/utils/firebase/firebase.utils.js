@@ -2,12 +2,12 @@ import { initializeApp } from 'firebase/app';
 import {
     getAuth,
     signInWithPopup,
-    signInWithRedirect,
     GoogleAuthProvider,
     createUserWithEmailAndPassword,
-    signInWithEmailAndPassword
+    signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged
 } from 'firebase/auth'
-import { confirmPasswordReset } from 'firebase/auth/cordova';
 
 import {
     getFirestore,
@@ -81,3 +81,7 @@ export const signinAuthUserWithEmailAndPassword = async (email, password) => {
 
     return await signInWithEmailAndPassword(auth, email, password);
 }
+
+export const signOutUser = async() => await signOut(auth);
+
+export const onAutStateChangedListener = (callback) => onAuthStateChanged(auth, callback)
