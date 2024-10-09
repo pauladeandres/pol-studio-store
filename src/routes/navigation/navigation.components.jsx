@@ -6,7 +6,10 @@ import { UserContext } from '../../contexts/user.context'
 import { signOutUser } from '../../utils/firebase/firebase.utils'
 
 import './navigation.styles.scss'
-import { ReactComponent as CartIcon } from '../../assets/icons/bag.svg'
+
+import CartIcon from '../../components/cart-icon/cart-icon.component'
+import CartDropdown from '../../components/cart-dropdown/cart-drawer.component'
+
 import { ReactComponent as Logo } from '../../assets/pol.svg'
 import { ReactComponent as CloseIcon } from '../../assets/icons/close.svg'
 import { ReactComponent as UserIcon } from '../../assets/icons/user-circle.svg'
@@ -24,6 +27,10 @@ const NavBar = () => {
         document.querySelector('.slider-menu').classList.remove('open');
         document.querySelector('.slider-menu-overlay').classList.remove('open');
         document.querySelector('.burguer-menu').classList.remove('open')
+    }
+
+    function openCartDrawer() {
+        document.querySelector('.cart-drawer-container').classList.toggle('open')
     }
 
     return (
@@ -45,20 +52,19 @@ const NavBar = () => {
                     </div>
                     {
                         currentUser ? (
-                            <div className='icon-element'>
+                            <div className='icon-element account'>
                                 <span className='icon-link' onClick={signOutUser}>
                                     SIGN OUT
                                 </span>
                             </div>
                         ) : null
                     }
-                    <div className='icon-element'>
-                        <Link className='icon-link' to='/cart' >
+                    <div className='icon-element cart' onClick={openCartDrawer}>
                             <CartIcon className='cart-icon' />
-                        </Link>
                     </div>
                 </div>
             </div>
+            <CartDropdown></CartDropdown>
             <div className='slider-menu-overlay' onClick={closeSliderMenu}></div>
             <div className='slider-menu'>
                 <div className='slider-menu-content' onClick={openSliderMenu}>

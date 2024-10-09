@@ -1,0 +1,20 @@
+.cart-icon {
+    position: relative;
+}
+.cart-quantity {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 10px;
+    font-weight: 600;
+    color: white;
+    background-color: black;
+    padding: 3px;
+    line-height: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

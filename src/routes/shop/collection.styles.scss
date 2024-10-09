@@ -1,0 +1,16 @@
+.collection {
+    padding: 150px 20px 40px
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media screen and (max-width: 700px) {
+    .collection {
+        padding: 100px 2px 40px;
+    }
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
