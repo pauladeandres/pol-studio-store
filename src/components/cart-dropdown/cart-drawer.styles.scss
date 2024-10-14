@@ -1,5 +1,10 @@
 .cart-drawer-container {
 
+    .cart-drawer-title {
+        text-transform: uppercase;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
     .cart-drawer-overlay {
         display: none;
         position: fixed;

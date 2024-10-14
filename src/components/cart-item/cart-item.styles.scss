@@ -1,0 +1,21 @@
+.cart-item {
+    display: flex;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+.cart-image-container {
+    width: 120px;
+    position: relative;
+    padding-top: 40%;
+    overflow: hidden;
+
+    img {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+.cart-product-info {
+    padding-left: 20px;
+}
