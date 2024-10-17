@@ -7,10 +7,14 @@ import { CartContext } from '../../contexts/cart.context'
 import './cart-icon.styles.scss'
 
 const CartIcon = () => {
+
+    const { cartQuantity } = useContext(CartContext);
+    console.log('cart quantity', cartQuantity)
+
     return (
         <div className='cart-icon'>
             <ShoppingBag ></ShoppingBag>
-            <span className='cart-quantity'>20</span>
+            <span className='cart-quantity'>{ cartQuantity }</span>
         </div>
     )
 }

@@ -20,4 +20,16 @@
             background-color: black;
             color: white;
         }
+        &.text-button {
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            border: none;
+            background-color: transparent;
+            &:hover {
+                    color: rgb(185, 185, 185);
+                }
+        }
 }

@@ -1,7 +1,8 @@
 import './button.styles.scss'
 
 const BUTTON_TYPE_CLASSES = {
-    inverted: 'inverted'
+    inverted: 'inverted',
+    text: 'text-button'
 }
 
 const Button = ({ text, buttonType, ...otherProps}) => {

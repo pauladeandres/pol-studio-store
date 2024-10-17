@@ -3,6 +3,14 @@
     max-width: 100%;
     margin-bottom: 20px;
 }
+.cart-product-details {
+    font-size: 12px;
+    .cart-item-title {
+        text-transform: uppercase;
+        margin-bottom: 6px;
+    }
+}
+
 .cart-image-container {
     width: 120px;
     position: relative;
@@ -16,6 +24,14 @@
         left: 0;
     }
 }
+
 .cart-product-info {
     padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.quantity-button {
+    cursor: pointer;
+    padding: 2px 20px;
 }
